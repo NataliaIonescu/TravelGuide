@@ -1,0 +1,13 @@
+﻿body {
+   /* background-color:antiquewhite;*/
+    background-image: url('../images/home2.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+h1,h2,h3,h5,h5,h6,h7,p {
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    color: black;
+    
+}

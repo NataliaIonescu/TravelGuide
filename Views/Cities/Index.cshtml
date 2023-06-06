@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TravelGuide.Models.City>
+
+@{
+    ViewData["Title"] = "Cities";
+}
+<style>
+    body {
+        background-color: #a3d7dc;
+    }
+</style>
+<form asp-controller="Cities" asp-action="Index">
+    <h5 style="margin-left:12px; font-size: 20px; font-family: Georgia, Times New Roman , Times, serif;">Get inspired for your next vacation from our list of cities for which we offer guided tours.<br><br></h5>
+    <div class="input-group mb-3" style="margin-left:12px">
+        <input type="text" id="CityName" placeholder="Search for a city" name="CityName" aria-label="" aria-describedby="basic-addon1" />
+        <div class="input-group-append">
+            <button class="btn btn-info btn-outline-dark" type="submit">Seach</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#CityName").autocomplete({
+                source: 'api/postapi/search'
+            });
+        });
+    </script>
+}
+
+<br />
+<br />
+<br />
+<div class="container mb-5">
+    
+    <div class="row g-3">
+        @foreach(var item in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-6 mb-5">
+                <div class="card">
+                    <a asp-controller="Cities" asp-action="Details" asp-route-id="@item.CityID">
+                    <img src=@("/images/gallery/" + item.ImageName)
+                         alt=@item.CityName
+                         class="card-img"
+                         height="200"
+                         width="200" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Georgia, Times New Roman , Times, serif; font-weight:600">@item.CityName</h5>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿
+@model TravelGuide.Models.Offer
+<h1 style="font-size: 40px; font-family: Georgia, Times New Roman , Times, serif; font-weight: 700;">Offer Details</h1>
+<style>
+    body {
+        background-image: linear-gradient(skyblue, peru);
+    }
+</style>
+
+<h2 style="font-family: Georgia, Times New Roman , Times, serif;">@Model.Hotel.HotelName</h2>
+<p style="font-family: Georgia, Times New Roman , Times, serif;">Address: @Model.Hotel.Address</p>
+
+<h2 style="font-family: Georgia, Times New Roman , Times, serif;">@Model.CityTour.Title</h2>
+<p style="font-family: Georgia, Times New Roman , Times, serif;">Description: @Model.CityTour.Description</p>
+<p style="font-family: Georgia, Times New Roman , Times, serif;">Itinerary: @Model.CityTour.Itinerary</p>
+<p style="font-family: Georgia, Times New Roman , Times, serif;">Duration: @Model.CityTour.Duration h</p>
+<p style="font-family: Georgia, Times New Roman , Times, serif;">Price: @Model.Price €</p>
+<form method="post" action="/Offers/Book">
+    <input type="hidden" name="offerId" value="@Model.OfferID" />
+    <button type="submit" class="btn btn-info btn-outline-dark" style="font-family: Georgia, Times New Roman , Times, serif;">Book</button>
+</form>
+<br /><br />
+<img src=@("/images/gallery/" + Model.CityTour.City.ImageName)
+     alt=@Model.CityTour.City.CityName
+
+     height="500"
+     width="700" />
+@*<form asp-controller="Offers" asp-action="Details" asp-route-id="@Model.OfferID" method="post">
+    <button type="submit">Book</button>
+</form>*@
+

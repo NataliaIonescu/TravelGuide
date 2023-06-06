@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@*<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    </head>
+    <body>
+        <div class="text-center">
+            <h1 >Travel memories you'll never forget</h1>
+            <h3>Unforgettable cultural experience</h3>
+        </div>
+
+    </body>
+</html>
+*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to TravelGuide</title>
+
+    <style>
+        body {
+            background-image: url('../images/home3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 40px; 
+            font-family: Georgia, Times New Roman , Times, serif;
+            /*font-size: 2rem;*/
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       @* <h1>Welcome to TravelGuide</h1>*@
+        <h1>Travel memories you'll never forget<br />
+            Unforgettable cultural experience
+        </h1>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <form method="post" action="/Home/GetStarted">
+            <button type="submit" class="btn btn-dark btn-lg" style="font-family: Georgia, Times New Roman , Times, serif;">Get Started</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Booking Confirmation";
+}
+<style>
+    body {
+        background-image: url('../images/confirmationBg.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<br />
+<h1 style="font-size: 20px; font-family: Georgia, Times New Roman , Times, serif; font-weight: bold;">Booking Confirmation</h1>
+
+<p style="font-size: 20px; font-family: Georgia, Times New Roman , Times, serif;font-weight: 500;">@TempData["ConfirmationMessage"]</p>
+
+<p style="font-size: 20px; font-family: Georgia, Times New Roman , Times, serif;font-weight:500;">Click <a class="btn btn-primary btn btn-outline-light" asp-controller="Home" asp-action="Index">here</a> for Home page.</p>
